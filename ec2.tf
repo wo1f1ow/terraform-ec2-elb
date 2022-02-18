@@ -7,13 +7,13 @@ resource "aws_instance" "private" {
   availability_zone = element(var.availability_zones,0)
   subnet_id     = aws_subnet.private.id
   iam_instance_profile  = aws_iam_instance_profile.systems_manager.name
-  vpc_security_group_ids = ["${aws_security_group.gophish.id}"]
+  vpc_security_group_ids = ["${aws_security_group.offsec.id}"]
   root_block_device {
     encrypted = "true"
   }
 
   tags = {
-    Name = "gophish-${random_pet.ec2.id}"
+    Name = "offsec-${random_pet.ec2.id}"
   }
 
   user_data = <<EOF

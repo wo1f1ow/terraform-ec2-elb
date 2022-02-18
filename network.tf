@@ -123,7 +123,7 @@ resource "aws_subnet" "private" {
   }
 }
 
-resource "aws_security_group" "gophish" {
+resource "aws_security_group" "offsec" {
   name        = "${var.environment}-default-sg"
   description = "Default security group to allow inbound/outbound from the VPC"
   vpc_id      = "${aws_vpc.main.id}"
