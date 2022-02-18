@@ -15,11 +15,8 @@ variable "availability_zones" {
   default     = ["eu-central-1a", "eu-central-1b", "eu-central-1c"]
 }
 
-variable "environment" {
-  default = "te11esk1ww1-setup"
-}
+variable "environment" {}
 
 variable "domain" {
   description = "Domain used in phishing campaign"
-  default = "terrabanks.com"
 }
